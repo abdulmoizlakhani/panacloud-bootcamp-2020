@@ -1,0 +1,22 @@
+name: ci_surge
+
+on:
+  push: 
+    branches: [ github-actions ]
+  pull_request:
+    branches: [ github-actions ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+        
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - name: Install Surge
+        run: npm install -g surge
+      - name: Run Surge
+        run: surge ./ github_actions_setup_amlakhani.surge.sh --token ${{ secrets.SURGE_TOKEN }}
