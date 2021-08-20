@@ -13,7 +13,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          It's a React App deployed on Surge using GitHub Actions.
+          It's a React App deployed on Surge using GitHub Actions :)
         </a>
       </header>
     </div>
